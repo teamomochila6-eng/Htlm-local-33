@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acceso a Bot de Telegram</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #0088cc 0%, #26a5e4 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .container {
+            background-color: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            padding: 30px;
+            max-width: 500px;
+            width: 100%;
+            text-align: center;
+        }
+        
+        .header {
+            margin-bottom: 30px;
+        }
+        
+        h1 {
+            color: #0088cc;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        
+        p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        .bot-info {
+            background-color: #f0f8ff;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 30px;
+            border-left: 5px solid #0088cc;
+        }
+        
+        .bot-name {
+            font-weight: bold;
+            color: #0088cc;
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+        
+        .bot-username {
+            color: #555;
+            font-size: 16px;
+        }
+        
+        .buttons-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .telegram-btn {
+            background-color: #0088cc;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            padding: 18px 20px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        
+        .telegram-btn i {
+            margin-right: 10px;
+            font-size: 22px;
+        }
+        
+        .telegram-btn:hover {
+            background-color: #0077b5;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 136, 204, 0.3);
+        }
+        
+        .telegram-btn:active {
+            transform: translateY(0);
+        }
+        
+        .btn-1 {
+            background-color: #34aadc;
+        }
+        
+        .btn-2 {
+            background-color: #2a9cd6;
+        }
+        
+        .btn-3 {
+            background-color: #0088cc;
+        }
+        
+        .instructions {
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 20px;
+            text-align: left;
+        }
+        
+        .instructions h3 {
+            color: #0088cc;
+            margin-bottom: 10px;
+        }
+        
+        .instructions ol {
+            padding-left: 20px;
+            color: #555;
+        }
+        
+        .instructions li {
+            margin-bottom: 8px;
+            line-height: 1.5;
+        }
+        
+        .footer {
+            margin-top: 20px;
+            color: #888;
+            font-size: 14px;
+        }
+        
+        @media (max-width: 480px) {
+            .container {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 24px;
+            }
+            
+            .telegram-btn {
+                padding: 15px;
+                font-size: 16px;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1><i class="fab fa-telegram"></i> Acceso Rápido al Bot</h1>
+            <p>Haz clic en cualquiera de los botones para abrir directamente el bot en Telegram</p>
+        </div>
+        
+        <div class="bot-info">
+            <div class="bot-name">DESCARGAVIDieOS Bot</div>
+            <div class="bot-username">@DESCARGAVIDieOS_bot</div>
+        </div>
+        
+        <div class="buttons-container">
+            <a href="https://t.me/DESCARGAVIDieOS_bot" class="telegram-btn btn-1" target="_blank" id="btn1">
+                <i class="fab fa-telegram"></i> Abrir Bot (Opción 1)
+            </a>
+            
+            <a href="tg://resolve?domain=DESCARGAVIDieOS_bot" class="telegram-btn btn-2" id="btn2">
+                <i class="fab fa-telegram"></i> Abrir Bot (Opción 2)
+            </a>
+            
+            <a href="https://telegram.me/DESCARGAVIDieOS_bot" class="telegram-btn btn-3" target="_blank" id="btn3">
+                <i class="fab fa-telegram"></i> Abrir Bot (Opción 3)
+            </a>
+        </div>
+        
+        <div class="instructions">
+            <h3><i class="fas fa-info-circle"></i> ¿Cómo funciona?</h3>
+            <ol>
+                <li><strong>Opción 1:</strong> Abre el bot en Telegram Web o aplicación (recomendado para escritorio).</li>
+                <li><strong>Opción 2:</strong> Intenta abrir directamente en la aplicación de Telegram (mejor para móviles).</li>
+                <li><strong>Opción 3:</strong> Alternativa para abrir el bot en Telegram.</li>
+                <li>Si tienes Telegram instalado, se abrirá automáticamente en la aplicación.</li>
+                <li>Si no tienes Telegram, se abrirá en el navegador para que puedas descargarlo.</li>
+            </ol>
+        </div>
+        
+        <div class="footer">
+            <p>© 2023 - Bot de Telegram DESCARGAVIDieOS</p>
+        </div>
+    </div>
+    
+    <script>
+        // Detectar dispositivo para mejorar la experiencia
+        document.addEventListener('DOMContentLoaded', function() {
+            const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+            
+            // Para dispositivos móviles, priorizar el enlace tg://
+            if (isMobile) {
+                console.log("Dispositivo móvil detectado - Priorizando enlace tg://");
+                
+                // Añadir evento especial al segundo botón (tg://)
+                const btn2 = document.getElementById('btn2');
+                btn2.addEventListener('click', function(e) {
+                    // Primero intentamos abrir la app
+                    window.location.href = "tg://resolve?domain=DESCARGAVIDieOS_bot";
+                    
+                    // Si después de 2 segundos no se abrió, redirigimos a la web
+                    setTimeout(function() {
+                        if (document.hasFocus()) {
+                            window.location.href = "https://t.me/DESCARGAVIDieOS_bot";
+                        }
+                    }, 2000);
+                    
+                    e.preventDefault();
+                    return false;
+                });
+            }
+            
+            // Añadir animación a los botones al hacer clic
+            const buttons = document.querySelectorAll('.telegram-btn');
+            buttons.forEach(button => {
+                button.addEventListener('click', function() {
+                    this.style.transform = 'scale(0.95)';
+                    setTimeout(() => {
+                        this.style.transform = '';
+                    }, 200);
+                });
+            });
+            
+            // Mostrar mensaje de confirmación
+            buttons.forEach(button => {
+                button.addEventListener('click', function() {
+                    console.log("Redirigiendo al bot de Telegram...");
+                });
+            });
+        });
+    </script>
+</body>
+</html>
